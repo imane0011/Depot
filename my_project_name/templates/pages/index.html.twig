@@ -1,0 +1,247 @@
+{% extends 'base.html.twig'%}
+{% block head %} {{ parent() }}
+    <style type="text/css">
+            /*
+            body{
+                
+            }*/
+            #body{
+                margin-top:15%;            
+
+            }
+            #img{
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                align-items: center;
+                justify-content: center;
+                height: 800px;
+                padding-top:15%;
+                width:100%;
+            }
+            .nav{
+                width: 100%;
+                height: 25%;
+                align-items: center;
+                align-content: space-around;
+            }
+            .blanc{
+                color:white;
+                text-align: center;
+                padding-top: 10%;
+            }
+            .btn-lg{
+                width: 160px;
+            }
+            .formul{
+                align-items: flex-end;
+                background-color: rgb(243,243,243,0.5);
+                border-radius: 20px;
+                border-color: #D9D9D9;
+                width: 544px;
+                height: 198px;
+                margin: 0 auto;
+                border-style: solid;
+                border-width: 2px;
+                
+            }
+            .deux-un,.deux-deux{
+                display: flex;
+                flex-direction: column;
+                align-items:center;
+                justify-content: center;
+                justify-items: center;
+                text-justify: auto;
+                /*padding-top:15% ;*/
+                width: 100%;
+                height: 255px;
+            }
+            .deux-un{
+                background: linear-gradient(#e6e6e6, #ffffff);
+                
+            }.deux-deux{
+                background: linear-gradient(#ffffff, #e6e6e6);
+                
+            }
+            .header{
+                /*e6e6e6;ffffff*/
+                background: linear-gradient(#ffffff, #e6e6e6);
+                position: fixed ;
+                /*height: 15%;*/
+                display: flex;
+                align-content: center;
+                justify-content: space-around;
+                width: 100%;
+                
+            }
+            #footer{
+                background-color:#e6e6e6;
+                width:100%;
+                height:25%;
+                float: inline-end;
+            }
+            footer{
+                width:100%;
+            }
+            #lbl{
+                margin-left: 3%;
+                padding-top: 10%;
+            }
+            #adresse{
+                width:60%;
+            }
+            #estimbt{
+                width:20%;
+                background-color: #0000ff;
+            }
+            #text{
+                justify-content: space-around;
+                align-content: center;
+            }
+            .tb{
+                flex:1;
+                font-weight: bold;
+                font-size: 20px;
+                align-self: center;
+            }
+            .tn{
+                flex:1;
+                font-weight: bold;
+                font-size: 20px;
+                /*align-self: center;*/
+                margin-left: 5%;
+                float: right;
+            }
+            .logo{
+                
+                flex:1;
+            }
+            #header{
+                display: flex;
+                align-content: center;
+                justify-content: space-around;
+                width: 100%;
+                height: 114px;
+                
+            }
+            .both{
+                flex:1;
+                flex-direction: row;
+            }
+            .logo{
+                flex:1;
+            }
+            #body{
+                width:100%;
+                
+            }
+            .ecrit{
+                flex:2;
+            /* margin-top: 15%;*/
+                text-align: center;
+                width:30%;
+            }
+            .ecritb{
+            /*   flex:1;*/
+            margin-bottom: 10%;
+                width:240px;
+            }
+            h2{
+                margin-top:10%;
+            }
+               </style>
+
+{% endblock %}
+{%  block title "Acceuil "%}
+{% block body %}
+
+{# <div class="jumbotran txt-center"> #}
+<div style="background-image: url('https://www.prawo-mieszkaniowe.info/zdjecia_pytan/552_2929213.jpg');background-repeat: no-repeat;
+                background-size: 100% 100%;
+                align-items: center;
+                justify-content: center;
+                height: 800px;
+                padding-top:15%;
+                width:100%;" id="body" class=" container-fluid">
+        
+     
+       <div id="img">
+            <h1 style="color:blue;
+                text-align: center;
+                padding-top: 10%;" class="blanc">
+                Estimez votre bien 
+            </h1> 
+            <br><br>
+            <div style="
+                align-items: flex-end;
+                background-color: rgb(243,243,243,0.5);
+                border-radius: 20px;
+                border-color: #D9D9D9;
+                width: 544px;
+                height: 198px;
+                margin: 0 auto;
+                border-style: solid;
+                border-width: 2px;
+                
+            " class="formul col">
+                <form action="" method="POST">
+                   <strong id="lbl" style="margin-left: 3%;padding-top: 10%; " class="form-label row"> Adresse de votre bien  </strong>
+                    <br>
+                    <div id="text" style="" class="row row-cols-2">
+                    <input style="" class="form-control ml-4 col-7" id="adresse" type="text" placeholder="10 rue du marché, Nice, 06100, France">
+                    <button onclick="location.href='{{ path('estimation.type') }}';" id="estimbt" style="background-color: #0000ff;  " class="col-3 ml-3 btn btn-primary"> Estimer  </button>
+                    </div>
+                </form>
+            </div>
+            <br><br><br>
+        </div>
+        <!-- til here we okay xD-->
+        <div class="deux ">
+            <div style="display: flex;
+                flex-direction: column;
+                align-items:center;
+                justify-content: center;
+                justify-items: center;
+                text-justify: auto;
+                /*padding-top:15% ;*/
+                width: 100%;
+                height: 255px;
+                background: linear-gradient(#e6e6e6,#ffffff );" class="deux-un ">
+                <h2 style=" flex:2; margin-top:10%;
+                text-align: center;
+                width:30%;" class="ecrit">
+                    Estimation immobillière
+                </h2>
+                <p style=" flex:2;
+                text-align: center;
+                width:30%;" class="ecrit">
+                    L'estimation immobillière permet d’évaluer la valeur d’un bien immobilier. Cette évaluation se fait  à partir des caractéristiques de ce bien. 
+                </p>
+                <button onclick="location.href='{{ path('estimation.type') }}';" style=" margin-bottom: 10%; width:240px;" class="btn btn-primary btn-lg ecritb">Estimer</button>
+            </div>
+            <br>
+            <div style="display: flex;
+                flex-direction: column;
+                align-items:center;
+                justify-content: center;
+                justify-items: center;
+                text-justify: auto;
+                /*padding-top:15% ;*/
+                width: 100%;
+                height: 255px;
+                background: linear-gradient(#ffffff, #e6e6e6);" class="deux-deux ">
+                <h2 style=" flex:2;  margin-top:10%;
+                text-align: center;
+                width:30%;" class="ecrit">
+                    Autour de vous
+                </h2>
+                <p style=" flex:2;
+                text-align: center;
+                width:30%;" class="ecrit">
+                    Découvrez la valeur des biens à votre proximiter et ayez une idée sur l'estimation du vôtre.  
+                </p>
+                <button onclick="location.href='{{ path('estimation.type') }}';" style=" margin-bottom: 10%; width:240px;" class="btn btn-lg btn-primary ecritb">Découvrez</button>
+            </div>
+        </div>
+    </div>
+{# </div> #}
+{% endblock %}

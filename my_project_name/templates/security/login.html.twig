@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+{% block head %}
+        <title>{% block title %}ESTIMOB | Connexion {% endblock %}</title>
+{% endblock %}
+{% block body %}
+    <br><br>
+     <div class='pt-5 mt-5' id="contenu">
+         <div>
+             <h3 style="font-size: 25px;font-weight: normal;">Connexion</h3>
+         </div>
+         <br><br>
+
+         <div class="row" id="cn">
+            <div  class="col  " id="textconn">
+                <a style="font-style=none" id="c" href="#">  Se connecter</a> 
+           </div> 
+         
+            <div class="col  " id="textnew">
+                <a style="font-style=none" onclick="location.href='{{ path('pages.connexion.creer') }}';" id="n" >Créer un compte</a>
+           </div>
+           
+        </div> 
+        <hr style="border: 2px solid #cfcfcd;
+        border-radius: 5px;">
+   
+               <br>
+               <div id="contnew">
+                     
+</div>
+          <div id="contconn">
+              <form class="form-group" method="post">
+                  {% if error %}
+                      <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                  {% endif %}
+
+                  {% if app.user %}
+                      <div class="mb-3">
+                         Vous êtes connécté tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+                      </div>
+                  {% endif %}
+
+                  <div class="row form-group col-11 row-col-2">
+                 
+                  <label class="col form-check-label" for="inputEmail">Email</label>
+                  <input  class="col form-control" type="email" {#{value="{{ last_username }}"#} name="email" id="inputEmail" required autofocus>
+                  </div>
+                   <div class="row col-11 row-col-2">
+                  <label  class="col" for="inputPassword">Mot de passe</label>
+                  <input  class="form-control col" type="password" name="password" id="inputPassword" required>
+                    </div>
+                  <input type="hidden" name="_csrf_token"
+                        value="{{ csrf_token('authenticate') }}"
+                  >
+
+                  
+                      {# Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                      See https://symfony.com/doc/current/security/remember_me.html #}
+<br>
+                      <div class="custom-control custom-checkbox mb-3">
+                         <input class="custom-control-input" id="remember_me" type="checkbox"  name="_remember_me">
+                          <label class="custom-control-label" for="remember_me"> Se souvenir de moi </label>
+                      </div>
+                
+<div class="row col-11 row-col-2">
+<div class="col-10"> </div>
+<div class="col-2 float-right"> 
+                  <button class="btn   btn-primary" type="submit">
+                      Connexion
+                  </button><div><div>
+              </form>
+          </div>
+
+
+
+<script>
+      
+        
+
+</script>
+
+{% endblock %}

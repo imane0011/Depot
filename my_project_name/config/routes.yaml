@@ -1,0 +1,14 @@
+index:
+    path: /
+    controller: App\Controller\Estimation\EstimationControlleur::index
+
+maison:
+    path:       /maison/estimer
+    controller: App\Controller\MaisonController::login
+    schemes:    [https]
+
+app_logout:
+    path: /logout
+    methods: GET
+
+

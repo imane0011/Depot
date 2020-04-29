@@ -1,0 +1,121 @@
+{% extends "base.html.twig" %}
+{% block head %}
+        <title>{% block title %}ESTIMOB | Inscription {% endblock %}</title>
+{% endblock %}
+{% block body %}
+   <br><br>
+     <div class='pt-5 mt-5' id="contenu">
+         <div>
+             <h3 style="font-size: 25px;font-weight: normal;">Connexion</h3>
+         </div>
+         <br><br>
+
+         <div class="row" id="cn">
+            <div  class="col  " id="textconn">
+                <a style="font-style=none" id="n"onclick="location.href='{{ path('app_login') }}';">  Se connecter</a> 
+           </div> 
+         
+            <div class="col  " id="textnew">
+                <a style="font-style=none"  href="#" id="c" >Créer un compte</a>
+           </div>
+           
+        </div> 
+        <hr style="border: 2px solid #cfcfcd;
+        border-radius: 5px;">
+   
+               <br><br>
+               <div id="n">
+              <form method="post"  type="submit" >
+              {{form_start(form)}}
+             <div class="col-11 row "> 
+             <div class= "col">
+                {{form_label(form.civilite)}}
+              
+              </div>
+              <div style='display:inline' class= "col form-check-inline">
+                {# {{form_widget(form.civilite,{'label_attr':{'class':'check-inline-input'}})}} #}
+                {{form_widget(form.civilite)}}
+              </div>
+              </div>
+<br>
+              <div class="col-11 row"> 
+             <div class= "col">
+                {{form_label(form.nom)}}
+              
+              </div>
+               <div class= "col">
+                {{form_widget(form.nom)}}
+              
+              </div>
+              </div>
+<br>           
+             <div class="col-11 row "> 
+             <div class= "col">
+                {{form_label(form.prenom)}}
+              
+              </div>
+               <div class= "col">
+                {{form_widget(form.prenom)}}
+              
+              </div>
+              </div>
+<br>
+
+             <div class="col-11 row"> 
+             <div class= "col">
+                {{form_label(form.tel)}}
+              
+              </div>
+               <div class= "col">
+                {{form_widget(form.tel)}}
+              
+              </div>
+              </div>
+<br>              
+              <div class="col-11 row "> 
+             <div class= "col">
+                {{form_label(form.email)}}
+              
+              </div>
+               <div class= "col">
+                {{form_widget(form.email)}}
+              
+              </div>
+              </div>
+
+<br>
+              <div class="col-11 row"> 
+             <div class= "col">
+                {{form_label(form.password)}}
+              
+              </div>
+               <div class= "col">
+                {{form_widget(form.password)}}
+              
+              </div>
+              </div>
+              <br>
+              
+               <div class="col-11 row "> 
+             <div class= "col-10">
+              
+              </div>
+               <div class= "float-right col-2">
+                {{form_rest(form)}}
+                {{form_end(form)}}
+              
+              </div>
+              </div>
+   </form>    
+</div>
+          <div id="c">
+              
+          </div>
+
+
+
+<script>
+        
+</script>
+
+{% endblock %}

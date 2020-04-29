@@ -1,0 +1,479 @@
+{% extends "base.html.twig" %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+    <br><br>
+     <div onchange="check()" class="pt-5" id="gg">
+        <br><br> 
+         <div class= " row row-cols-2">
+        
+        {# starts the lefts side #}
+         {# <div style="height:75% " class =" "> #}
+        <div style="height:75%;" class="nav flex-column nav-pills mb-5 col-3 pl-3 ml-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a  style=" font-weight:bold;"  class="nav-link disabled" disabled id="v-pills-type-tab" data-toggle="pill" href="#v-pills-type" role="tab" aria-controls="v-pills-type" aria-selected="false">Type du bien</a>
+          <br><br> <a style=" font-weight:bold;" class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Informations du bien</a>
+          <br><br>  <a  style=" font-weight:bold;" class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Caracteristique du bien</a>
+            <br><br><a  style=" font-weight:bold;"  class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Plus de détails</a>
+            <br><br><a  style=" font-weight:bold;"  class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Plus de précision</a>
+            <br><br><a  style=" font-weight:bold;"  class="nav-link disabled" id="v-pills-result-tab" data-toggle="pill" href="#v-pills-result" role="tab" aria-controls="v-pills-result" aria-selected="false">Résultat de l'estimation</a>
+{# </div> #}
+         {# <ul class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+             <li class="nav-link" id="v-pills-type-tab" data-toggle="pill" href="#v-pills-type"  aria-controls="v-pills-type" aria-selected="false">
+                <a class="font-weight-bold nav-link disabled" aria-disabled="true" href="#"> Type du bien</a>
+            </li>
+
+            <li class="nav-link" id="v-pills-first-tab" data-toggle="pill" href="#v-pills-first" role="tab" aria-controls="v-pills-first" aria-selected="true">
+                <a class=" font-weight-bold nav-link active" aria-disabled="true" href="#">Informations du bien</a>
+            </li>
+           
+            <li class="nav-link" id="v-pills-info-tab" data-toggle="pill" href="#v-pills-info" role="tab" aria-controls="v-pills-info" aria-selected="false">
+                <a class="font-weight-bold nav-link disabled" aria-disabled="true" href="#">Caracteristique du bien</a>
+            </li>
+            <li class="nav-link" id="v-pills-last-tab" data-toggle="pill" href="#v-pills-last" role="tab" aria-controls="v-pills-last" aria-selected="false">
+                <a class="font-weight-bold nav-link disabled" href="#"  aria-disabled="true">Plus de détails</a>
+            </li>
+             <li class="nav-link" id="v-pills-prec-tab" data-toggle="pill" href="#v-pills-prec" role="tab" aria-controls="v-pills-prec" aria-selected="false">
+                <a class="font-weight-bold nav-link disabled" href="#"  aria-disabled="true">Plus de précision</a>
+            </li>
+            </ul>  #}</div>
+         {# starts the right side #}
+         {# hada fih kamlin #}
+
+
+  
+         <div  style="height:75%" class=" col-7 ml-5 tab-content" id="v-pills-tabContent" >
+
+{# lwl aybda hna #}
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <h3> Les informations du bien à estimer</h3>
+                
+                
+                 <div class="row">
+                 <div class="col">
+               
+              <br><br>
+              {{form_start(form)}}
+              
+            <div class="row">
+             <div class= "col">
+                {{form_row(form.adresse)}}
+              </div>
+            </div>
+
+              <div class="row">
+              <div class= "col">
+                {{form_row(form.ville)}}
+              
+              </div>
+              <div class= "col">
+                {{form_row(form.code)}}
+              
+              </div>
+              
+              </div>
+              <div class="row">
+            <div class= "col-6">
+                {{form_row(form.region)}}
+              
+              </div></div>
+
+            
+              </div>
+            {# MAPS #}
+            <br> <br>
+              </div>
+              <div class= "col-2 mt-5 float-lg-right">
+                 {# <button class="btn btn-info nav-link" id="v-pills-info-tab" data-toggle="pill" href="#v-pills-info" role="tab" aria-controls="v-pills-info" aria-selected="false"> Suivant </button> #}
+              </div>
+            </div>
+ {# end of right side part 1 #}
+
+{# Start of the SECOND PART #}
+      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+               <h3> Les caractéristiques du bien à estimer</h3>
+              <br><br>
+            <div class="row">
+             <div class= "col-6">
+                {{form_label(form.surface)}}
+              
+              </div>
+              <div class= "col-4">
+                {{form_widget(form.surface)}}
+        
+              
+              </div>
+               <div class= "col-2">
+               <h6 class="btn btn-lg">m²</h6>
+        
+              
+              </div>
+              {# m2 #}
+               </div>
+              <br>
+
+
+              <div class="row">
+              <div class= "col-6">
+                {{form_label(form.nbpieces)}}
+              
+              </div>
+              <div class= "col-4">
+                {{form_widget(form.nbpieces)}}
+              
+              </div>
+              </div>
+              <br>
+
+              <div class="row">
+              <div class= "col-6">
+                {{form_label(form.nbchambres)}}
+              
+              </div>
+               <div class= "col-4">
+                {{form_widget(form.nbchambres)}}
+              
+              </div>
+              </div>
+              <br>
+
+              <div class="row">
+                <div class= "col-6">
+                  {{ form_label(form.nbsalleb) }}
+               </div> 
+               <div class= "col-4">
+                {{form_widget(form.nbsalleb)}}
+               </div> 
+              </div><br>
+
+              <div class="row">
+                <div class= "col-6">
+                  {{ form_label(form.etage) }}
+               </div> 
+               <div class= "col-4">
+                {{form_widget(form.etage)}}
+               </div> 
+              </div>
+             <br>
+
+              <div class="row">
+                <div class= "col-6">
+                  {{ form_label(form.nbetages) }}
+               </div> 
+               <div class= "col-4">
+                {{form_widget(form.nbetages)}}
+               </div> 
+              </div>
+             
+             
+              <br><br>
+              <div  class="row">
+               <div class= "col float-lg-left">
+                {# <button class="btn btn-outline-primary float-left nav-link" id="v-pills-first-tab" data-toggle="pill"  href="#v-pills-first" role="tab" aria-controls="v-pills-first" aria-selected="false"> Retour </button> #}
+           
+             
+            </div>
+              <div class= "col float-lg-right">
+               
+              {# <button class="btn btn-primary float-right nav-link" id="v-pills-second-tab" data-toggle="pill" href="#v-pills-third" role="tab" aria-controls="v-pills-second" aria-selected="false"> Suivant </button> #}
+           
+            </div>
+              </div>  
+              </div>
+{# talt aybda hna #}
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                <h3> Plus de détails sur le bien</h3>
+                
+                <br><br>
+                 <div class="row">
+            
+              <div class= "col-6">
+                {{form_widget(form.ascenceur, {label_attr: {class: 'checkbox-custom'} })}}
+        
+              
+              </div>
+              
+              
+               </div>
+              <br>
+            <div class="row">
+            
+              <div class= "col-6">
+                {{form_widget(form.balcon, {id:'balcon',attr:{'onChange':'checks()'},label_attr: {class: 'checkbox-custom'} })}}
+              
+              </div>
+            {% set schecked = 0 %}
+            {% set pchecked = 0 %}
+            {% set mchecked = 0 %}
+            {% set bchecked = 0 %}
+              {# {{ form_widget(form.annee['day'],{'attr':{'style':'display:none'}}) }} #}
+              <div class= "col-4">
+             
+                    {% if schecked == 0 %}
+                     {{form_widget(form.surfaccebalcon,{'attr':{'style':'display:none'}})}}
+                    {% else %}
+                      {{form_widget(form.surfaccebalcon,{'attr':{'style':'display:inline'}})}}
+                    {% endif %}
+              
+              {# {{form_widget(form.surfaccebalcon)}} #}
+        
+               
+              </div>
+              {# m2 #}
+               </div>
+               <br>
+
+               <div class="row">
+             
+              <div class= "col-6">
+                {{form_widget(form.parking, {label_attr: {class: 'checkbox-custom'} })}}
+              
+              </div>
+               <div class= "col-4">
+               {% if pchecked == 0 %}
+                     {{form_widget(form.nbparking,{'attr':{'style':'display:none'}})}}
+                    {% else %}
+                      {{form_widget(form.nbparking,{'attr':{'style':'display:inline'}})}}
+                {% endif %}
+        
+              
+              </div>
+              {# m2 #}
+               </div>
+              <br>
+
+               <div class="row">
+             
+              <div class= "col-6">
+                {{form_widget(form.terrasse, {label_attr: {class: 'checkbox-custom'} })}}
+              
+              </div>
+               <div class= "col-4">
+                {% if mchecked == 0 %}
+                     {{form_widget(form.surfaceterrasse,{'attr':{'style':'display:none'}})}}
+                    {% else %}
+                      {{form_widget(form.surfaceterrasse,{'attr':{'style':'display:inline'}})}}
+                {% endif %}
+        
+              
+              </div>
+              
+              {# m2 #}
+               </div><br>
+               <div class="row">
+             
+              <div class= "col-6">
+                {{form_widget(form.cave, {label_attr: {class: 'checkbox-custom'} })}}
+              
+              </div>
+               <div class= "col-4">
+                {% if bchecked == 0 %}
+                     {{form_widget(form.nbcave,{'attr':{'style':'display:none'}})}}
+                    {% else %}
+                      {{form_widget(form.nbcave,{'attr':{'style':'display:inline'}})}}
+                {% endif %} 
+        
+              
+              </div>
+              {# m2 #}
+               </div>
+              <br>
+
+              <div class="row">
+               
+               <div class= "col-6">
+                {{form_widget(form.vue, {label_attr: {class: 'checkbox-custom'} })}}
+               </div> 
+              </div>
+             <br>
+
+              <div class="row">
+               
+               <div class= "col-6">
+                {{form_widget(form.pareno, {label_attr: {class: 'checkbox-custom'} })}}
+               </div> 
+              </div>
+             
+              <br>
+              
+              <div class= "row">
+              {# {{ form_widget(form.annee['day'],{'attr':{'style':'display:none'}}) }}
+              {{ form_widget(form.annee['month'],{'attr':{'style':'display:none'}}) }} #}
+               
+                <div class= "col-10">
+            {{ form_row(form.facade, {label_attr: {class: 'checkbox-custom'} }) }}                
+            </div>
+              
+             
+              </div>
+              <br><br>
+              
+              <div  class="row">
+               <div class= "col float-left">
+                {# <button class="btn btn-outline-primary nav-link" id="v-pills-first-tab" data-toggle="pill"  href="#v-pills-first" role="tab" aria-controls="v-pills-first" aria-selected="false"> Retour </button> #}
+           
+             
+            </div>
+              <div class= "col float-right">
+               
+              {# <button class="btn btn-primary nav-link" id="v-pills-second-tab" data-toggle="pill" href="#v-pills-third" role="tab" aria-controls="v-pills-second" aria-selected="false"> Suivant </button> #}
+           
+            </div>
+              </div>  </div>   
+              
+ {# end of right side part 3 #}
+              
+              {# Start of the SECOND PART #}
+       <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+              
+               <h3> Pour plus de précision ! (Tous ces champs sont optionnels )</h3>
+              <br><br>
+            <div class="row">
+             <div class= "col-6">
+                {{form_label(form.annee)}}
+              </div>
+              <div class= "col-4">
+                {{form_widget(form.annee)}}
+               </div>
+            </div>
+              <br>
+            <div class="row">
+             <div class= "col-6">
+                {{form_label(form.etat)}}
+              </div>
+              <div class= "col-4">
+                {{form_widget(form.etat)}}
+              </div>
+            </div>
+               <br>
+
+              <div class="row">
+              <div class= "col-6">
+                {{form_label(form.qualite)}}
+              
+              </div>
+              <div class= "col-4">
+                {{form_widget(form.qualite)}}
+              
+              </div>
+              </div>
+              <br>
+
+              <div class="row">
+              <div class= "col-6">
+                {{form_label(form.luminosite)}}
+              
+              </div>
+               <div class= "col-4">
+                {{form_widget(form.luminosite)}}
+              
+              </div>
+              </div>
+              <br>
+
+              <div class="row">
+                <div class= "col-6">
+                  {{ form_label(form.calme) }}
+               </div> 
+               <div class= "col-4">
+                {{form_widget(form.calme)}}
+               </div> 
+              </div>
+             
+              <br>
+              
+              <div class="row">
+                <div class= "col-6">
+                  {{ form_label(form.transport) }}
+               </div> 
+               <div class= "col-4">
+                {{form_widget(form.transport)}}
+               </div> 
+              </div>
+             
+              <br>
+              {# <div class="row">
+                <div class= "col-6">
+                  {{ form_label(form.energie) }}
+               </div> 
+               <div class= "col-4">
+                {{form_widget(form.energie)}}
+               </div> 
+              </div>
+             
+              <br> #}
+              
+              {# <div class= "row">
+             
+               <div class= "col-6">
+               {{ form_label(form.toiture) }}
+               </div>
+                <div class= "col-4">
+                {{form_widget(form.toiture)}}
+                </div> #}
+              
+              
+              </div>
+              <br><br>
+              <div  class="float-right row">
+               <button  class= " btn btn-primary float-right">
+               {{form_widget(form.estim)}}
+            </button>
+              </div>  
+             {{ form_widget(form._token,{'attr':{'style':'dispaly:none'}}) }}
+              
+              </div>
+
+
+
+              </div>
+             
+
+
+<script type="text/javascript">
+ 
+   function checks(){
+       if(document.getElementById("{{form.balcon.vars.id}}").checked){
+         "{{schecked}}"=1;
+       }  else{
+         " {{schecked}}"=0;
+       }
+        
+    };
+ function checkp(){
+       if(document.getElementById("{{form.parking.vars.id}}").checked){
+         "{{pchecked}}"=1;
+       }  else{
+         " {{pchecked}}"=0;
+       }
+        
+    };
+ function checkm(){
+       if(document.getElementById("{{form.terrasse.vars.id}}").checked){
+         "{{mchecked}}"=1;
+       }  else{
+         " {{mchecked}}"=0;
+       }
+        
+    };
+ function checkb(){
+       if(document.getElementById("{{form.cave.vars.id}}").checked){
+         "{{bchecked}}"=1;
+       }  else{
+         " {{bchecked}}"=0;
+       }
+        
+    };
+
+    function check(){
+         checks();
+         checkp();
+         checkm();
+         checkb();
+        
+    };
+
+    
+</script>
+
+
+
+{% endblock %}

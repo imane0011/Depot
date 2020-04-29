@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block head %}
+        <title>{% block title %}ESTIMOB | A proximité {% endblock %}</title>
+{% endblock %}
+{% block body %}
+    
+<div class="pt-5">
+   <form  class="row pt-5 mt-5 row-cols-4" method="get" onsubmit="type()">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Code Postal</label>
+            <input type="texte" class="form-control" id="exampleInputEmail1"  placeholder="Code Postal">
+        </div>
+       <div class="form-group">
+            <label for="exampleEmail1">Ville</label>
+            <input type="texte" class="form-control" id="exampleEmail1"  placeholder="Ville">
+        </div>
+       <div class="form-group">
+            <label for="exampleFormControlSelect1">Type du bien</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>Maison</option>
+                <option>Appartement</option>
+                
+            </select>
+        </div>
+       
+        <button type="submit"  class="btn btn-primary">Chercher</button>
+    </form>
+    <div>
+    {% set biens = NULL %}
+    {% set post ="" %}
+    {% if biens %}
+        {% for bien in biens %}
+        <p>{{biens['postal']}}</p>
+            {# afficher les articles maps+ bn pieces + prix bien.addresse bien.nbpiece  bien.prix #}
+        {% endfor %}
+    {% else %} 
+         
+    <h3>Pas de biens à afficher </h3> <p><a>Estimer votre bien gratuitement</a></p>
+    
+    {% endif %}
+     
+    
+    
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% endblock %}

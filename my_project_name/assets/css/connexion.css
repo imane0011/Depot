@@ -1,0 +1,45 @@
+#contenu{
+    position: absolute;
+    margin-top: 114px;
+    width:80%;
+    margin-left: 8%;
+
+}
+#textconn{
+    width:200px;
+    display: inline-block;
+}
+#textnew{
+    width:200px;
+    display: inline-block;
+    
+}
+#c{
+   
+    border-bottom: #0000ff;
+    border-width: 25px;
+    font-weight: bold;
+}
+#n{
+   
+    font-weight: normal;
+    border-bottom: #000000;
+    border-width: 25px;
+}
+#cn{
+    width:500px;
+    justify-content: flex-start;
+}
+#contconn{
+    margin-left:10%;
+}#contnew{
+    padding-left:10%;
+    display: none;
+}
+button{
+    
+    margin-left: 50%;
+}
+#tb,#tn{
+    text-decoration:none;
+}

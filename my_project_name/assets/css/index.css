@@ -1,0 +1,148 @@
+
+/*
+body{
+    
+}*/
+/*#body{
+    margin-top:15%;
+}*/
+#img{
+    background-image: url(../images/imgg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    align-items: center;
+    justify-content: center;
+    height: 800px;
+    padding-top:15%;
+    width:100%;
+}
+.nav{
+    width: 100%;
+    height: 25%;
+    align-items: center;
+    align-content: space-around;
+}
+.blanc{
+    color:white;
+    text-align: center;
+    padding-top: 10%;
+}
+.btn-lg{
+    width: 160px;
+}
+.formul{
+    align-items: flex-end;
+    background-color: rgb(243,243,243,0.5);
+    border-radius: 20px;
+    border-color: #D9D9D9;
+    width: 544px;
+    height: 198px;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 2px;
+    
+}
+.deux-un,.deux-deux{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    justify-items: center;
+    text-justify: auto;
+    /*padding-top:15% ;*/
+    width: 100%;
+    height: 255px;
+}
+.deux-un{
+    background: linear-gradient(#e6e6e6, #ffffff);
+    
+}.deux-deux{
+    background: linear-gradient(#ffffff, #e6e6e6);
+    
+}
+.header{
+    /*e6e6e6;ffffff*/
+    background: linear-gradient(#ffffff, #e6e6e6);
+    position: fixed ;
+    /*height: 15%;*/
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    width: 100%;
+    
+}
+#footer{
+    background-color:#e6e6e6;
+    width:100%;
+    height:25%;
+    float: inline-end;
+}
+footer{
+    width:100%;
+}
+#lbl{
+    margin-left: 3%;
+    padding-top: 10%;
+}
+#adresse{
+    width:60%;
+}
+#estimbt{
+    width:20%;
+    background-color: #0000ff;
+}
+#text{
+    justify-content: space-around;
+    align-content: center;
+}
+.tb{
+    flex:1;
+    font-weight: bold;
+    font-size: 20px;
+    align-self: center;
+}
+.tn{
+    flex:1;
+    font-weight: bold;
+    font-size: 20px;
+    /*align-self: center;*/
+    margin-left: 5%;
+    float: right;
+}
+.logo{
+    
+    flex:1;
+}
+#header{
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 114px;
+    
+}
+.both{
+    flex:1;
+    flex-direction: row;
+}
+.logo{
+    flex:1;
+}
+#body{
+    width:100%;
+    
+}
+.ecrit{
+    flex:2;
+   /* margin-top: 15%;*/
+    text-align: center;
+    width:30%;
+}
+.ecritb{
+  /*   flex:1;*/
+   margin-bottom: 10%;
+    width:240px;
+}
+h2{
+    margin-top:10%;
+}

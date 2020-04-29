@@ -1,0 +1,67 @@
+{% extends "base.html.twig" %}
+{% block body %}
+<br><br>
+ <div class= "pt-5 row row-cols-2">
+    <br><br>    
+        {# starts the lefts side #}
+         <div style="height:75%" class ="col-4 pt-5 ">
+        
+         <ul class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <li class="nav-link" id="v-pills-first-tab" data-toggle="pill" href="#v-pills-first" role="tab" aria-controls="v-pills-first" aria-selected="true">
+                <a class=" font-weight-bold nav-link active" aria-disabled="true" href="#">Type du bien</a>
+            </li><br><br>
+            <li class="nav-link" id="v-pills-second-tab" data-toggle="pill" href="#v-pills-second" role="tab" aria-controls="v-pills-second" aria-selected="false">
+                <a class="font-weight-bold nav-link disabled" aria-disabled="true" href="#"> Information du bien</a>
+            </li><br><br>
+            <li class="nav-link" id="v-pills-third-tab" data-toggle="pill" href="#v-pills-third" role="tab" aria-controls="v-pills-third" aria-selected="false">
+                <a class="font-weight-bold nav-link disabled" aria-disabled="true" href="#">Caractéristique du bien</a>
+            </li><br><br>
+            <li class="nav-link" id="v-pills-last-tab" data-toggle="pill" href="#v-pills-last" role="tab" aria-controls="v-pills-last" aria-selected="false">
+                <a class="font-weight-bold nav-link disabled" href="#"  aria-disabled="true">Plus de détails</a>
+            </li>          <br><br><a  style=" font-weight:bold;"  class="nav-link disabled" id="v-pills-result-tab" data-toggle="pill" href="#v-pills-result" role="tab" aria-controls="v-pills-result" aria-selected="false">Résultat de l'estimation</a>
+
+            </ul> </div>
+         {# starts the right side #}
+
+        <div style="height:75%" class ="col-7 center ">
+         <br><br>    
+         <h3> Quel est le type du bien que vous voulez estimer?</h3>
+          <br><br>
+            <div class="row ml-5 pl-5">
+            
+             <button onclick="location.href='{{ path('estimation.maison.estimer') }}';" class="btn btn-primary col-4"   type="button" ><br><br> 
+                <svg class="bi bi-house-fill" width="7em" height="7em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 012 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 011.414 0l6.647 6.646a.5.5 0 01-.708.708L8 2.207 1.354 8.854a.5.5 0 11-.708-.708L7.293 1.5z" clip-rule="evenodd"/>
+                </svg> 
+                <br><br> Maison<br><br><br><br>  
+             
+             <button   onclick="location.href='{{ path('estimation.appart.estimer') }}';" class="btn btn-primary col-4 ml-5"   type="button"><br><br> 
+                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" enable-background="new 0 0 496 496" height="7em" viewBox="0 0 496 496" width="7em"><g>
+                    <path d="m433.551 464h-31.551v-392c0-8.837-7.163-16-16-16h-120v-40c0-8.837-7.163-16-16-16h-111c-8.837 0-16 7.163-16 16v40h-13c-8.837 0-16 7.163-16 16v392h-31.551c-8.618 0-16.03 6.626-16.431 15.234-.428 9.189 6.888 16.766 15.982 16.766h114c4.418 0 8-3.582 8-8v-92h-6.548c-8.615 0-16.028-6.621-16.434-15.226-.433-9.188 6.889-16.774 15.982-16.774 4.831 0 145.545 0 141.548 0 8.615 0 16.028 6.621 16.434 15.226.433 9.188-6.888 16.774-15.982 16.774h-7v92c0 4.418 3.582 8 8 8h114c9.094 0 16.41-7.577 15.982-16.766-.401-8.608-7.813-15.234-16.431-15.234zm-224.551-133h-18c-8.836 0-16-7.164-16-16s7.164-16 16-16h18c8.836 0 16 7.164 16 16s-7.164 16-16 16zm0-60h-18c-8.836 0-16-7.164-16-16s7.164-16 16-16h18c8.836 0 16 7.164 16 16s-7.164 16-16 16zm0-60h-18c-8.836 0-16-7.164-16-16s7.164-16 16-16h18c8.836 0 16 7.164 16 16s-7.164 16-16 16zm0-60h-18c-8.836 0-16-7.164-16-16s7.164-16 16-16h18c8.836 0 16 7.164 16 16s-7.164 16-16 16zm95 180h-18c-8.837 0-16-7.164-16-16s7.163-16 16-16h18c8.837 0 16 7.164 16 16s-7.163 16-16 16zm0-60h-18c-8.837 0-16-7.164-16-16s7.163-16 16-16h18c8.837 0 16 7.164 16 16s-7.163 16-16 16zm0-60h-18c-8.837 0-16-7.164-16-16s7.163-16 16-16h18c8.837 0 16 7.164 16 16s-7.163 16-16 16zm0-60h-18c-8.837 0-16-7.164-16-16s7.163-16 16-16h18c8.837 0 16 7.164 16 16s-7.163 16-16 16zm-88 337v-84c0-4.418 3.582-8 8-8h48c4.418 0 8 3.582 8 8v84c0 4.418-3.582 8-8 8h-48c-4.418 0-8-3.582-8-8z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/></g> 
+                </svg>  
+               <br><br>  Appartement <br><br> <br><br> 
+              
+              </div>
+              
+       
+        </div>
+      
+       
+
+
+
+
+    </div>
+
+
+
+<script>
+   
+</script>
+
+
+
+
+
+{% endblock %}

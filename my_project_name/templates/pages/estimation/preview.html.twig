@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+{% block head %}
+        <title>{% block title %}ESTIMOB | A proximité {% endblock %}</title>
+{% endblock %}
+{% block body %}
+   {% set type = 'maison' %} 
+   {% set postal = '34000' %} 
+<div class="col-10 pt-5 mt-5 ">
+   <form  class="row col-10 pt-5 mt-5 row-cols-4" method="get" onsubmit="type()">
+        <div class=" col form-group">
+            <label for="exampleInputEmail1">Code Postal</label>
+            <input type="texte" class="form-control" ontextchanged="do1(this);" id="exampleInputEmail1"  placeholder="Code Postal">
+        </div>
+       <div class="col form-group">
+            <label for="exampleEmail1">Ville</label>
+            <input type="texte" class="form-control"  id="exampleEmail1"  placeholder="Ville">
+        </div>
+       <div class="col form-group">
+            <label for="exampleFormControlSelect1">Type du bien</label>
+            <select class="form-control" onchange="do2(this);" id="exampleFormControlSelect1">
+                <option>Maison</option>
+                <option>Appartement</option>
+                
+            </select>
+        </div>
+       <div class="col">
+        <label for=""></label>
+        <button type="submit" onclick="location.href='{{ path('estimation.approximite.estimer',{'type':type,'postal':postal}) }}';"  class=" my-auto btn  btn-primary">Chercher</button>
+    </div></form><p>{{postal}}</p>
+    <div>
+   
+    {% if maisons %}
+        <h3 class="my-auto">Pas de biens à afficher </h3> <p><a class="my-auto" onclick="location.href='{{ path('estimation.type') }}';">Estimer votre bien gratuitement</a></p>
+
+        {% for maison in maisons %}
+        <p>{{maison.postal}}</p>
+            {# afficher les articles maps+ bn pieces + prix bien.addresse bien.nbpiece  bien.prix #}
+        {% endfor %}
+    {% else %} 
+         
+    <h3>Pas de biens à afficher </h3> <p><a onclick="location.href='{{ path('estimation.type') }}';">Estimer votre bien gratuitement</a></p>
+    
+    {% endif %}
+    
+    {% if apparts %}
+        {% for appart in apparts %}
+
+        <p>{{appart.code}}</p>
+            {# afficher les articles maps+ bn pieces + prix bien.addresse bien.nbpiece  bien.prix #}
+        {% endfor %}
+    {% else %} 
+         
+    <h3>Pas de biens à afficher </h3> <p><a>Estimer votre bien gratuitement</a></p>
+    
+    {% endif %}
+     
+    
+    
+    </div>
+</div>
+<script>
+      function do1(i){
+         "{{postal}}"= i.value;   
+         console.log(i.value);
+          }
+      function do2(i){
+         "{{type}}"= i.value;   
+          }
+        
+
+</script>
+
+
+
+{% endblock %}
